@@ -18,6 +18,26 @@ class Person {
   addPhone(number) {
     this.phoneNumbers.push(number)
   }
+
+  returnFormattedDetails() {
+    let dash = "" 
+    for (let i = 0; i < this.fullname().length; i++) {
+      dash = dash + "-"
+    }
+    const emailList = "- " + this.emails.join(`\n    - `)
+    const phoneList = "- " + this.phoneNumbers.join(`\n    - `)
+    return `
+    ${this.fullname()}
+    ${dash}
+    DOB: ${this.dob}
+    
+    Email Addresses:
+    ${emailList}
+    
+    Phone Numbers:
+    ${phoneList}
+    `
+  }
 }
 
 module.exports = Person

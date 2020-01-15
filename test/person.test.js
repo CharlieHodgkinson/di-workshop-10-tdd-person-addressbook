@@ -49,4 +49,27 @@ describe('Person', () => {
     expect(person.phoneNumbers).to.deep.equal([x.numA, x.numB])
   })
 
+  it('should format details correctly', () => {
+    let person = new Person(x.name, x.lname, x.dob)
+    person.addPhone(x.numA)
+    person.addPhone(x.numB)
+    person.addEmail(x.emailA)
+    person.addEmail(x.emailB)
+    const expected = (`
+    Joe Bloggs
+    ----------
+    DOB: 1 Jan 1990
+    
+    Email Addresses:
+    - joe@example.com
+    - joe.bloggs@example.co.uk
+    
+    Phone Numbers:
+    - 07648297501
+    - 07648754865
+    `
+    )
+    expect(person.returnFormattedDetails()).equal(expected)
+  })
+
 })
