@@ -20,24 +20,18 @@ class Person {
   }
 
   returnFormattedDetails() {
-    let dash = "" 
-    for (let i = 0; i < this.fullname().length; i++) {
-      dash = dash + "-"
-    }
-    const emailList = "- " + this.emails.join(`\n    - `)
-    const phoneList = "- " + this.phoneNumbers.join(`\n    - `)
     return `
-    ${this.fullname()}
-    ${dash}
-    DOB: ${this.dob}
-    
-    Email Addresses:
-    ${emailList}
-    
-    Phone Numbers:
-    ${phoneList}
-    `
-  }
+${this.fullname()}
+${"-".repeat(this.fullname().length)}
+DOB: ${this.dob}
+
+Email Addresses:
+${"- " + this.emails.join(`\n- `)}
+
+Phone Numbers:
+${"- " + this.phoneNumbers.join(`\n- `)}
+`
+    }
 }
 
 module.exports = Person

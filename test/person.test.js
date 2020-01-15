@@ -56,18 +56,18 @@ describe('Person', () => {
     person.addEmail(x.emailA)
     person.addEmail(x.emailB)
     const expected = (`
-    Joe Bloggs
-    ----------
-    DOB: 1 Jan 1990
-    
-    Email Addresses:
-    - joe@example.com
-    - joe.bloggs@example.co.uk
-    
-    Phone Numbers:
-    - 07648297501
-    - 07648754865
-    `
+Joe Bloggs
+----------
+DOB: 1 Jan 1990
+
+Email Addresses:
+- joe@example.com
+- joe.bloggs@example.co.uk
+
+Phone Numbers:
+- 07648297501
+- 07648754865
+`
     )
     expect(person.returnFormattedDetails()).equal(expected)
   })
